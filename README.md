@@ -189,16 +189,29 @@ If `table` is `null`, set `TABLE_NAME` before starting.
 
 ## 📱 Mobile App (Expo)
 
-The app reads the API URL from `EXPO_PUBLIC_API_URL`:
+The app now includes authentication with AWS Cognito. Set up environment variables:
 
 ```bash
+# Get these from CDK outputs after deployment
 export EXPO_PUBLIC_API_URL="https://xxxx.execute-api.sa-east-1.amazonaws.com"
+export EXPO_PUBLIC_USER_POOL_ID="sa-east-1_xxxxxxxxx"
+export EXPO_PUBLIC_USER_POOL_CLIENT_ID="xxxxxxxxxxxxxxxxxxxxxxxxxx"
+export EXPO_PUBLIC_AWS_REGION="sa-east-1"
+
 cd mobile
+pnpm install  # Install Amplify dependencies
 pnpm start
 # or: pnpm ios | pnpm android | pnpm web
 ```
 
-When the app opens, it performs `GET /health` and shows the JSON.
+### Authentication Features
+
+- **Sign Up**: Create account with email, name, birthdate
+- **Email Verification**: Automatic email verification
+- **Sign In**: Secure authentication with Cognito
+- **Sign Out**: Clean session management
+
+The app will show sign-in screen first, then main authenticated screen after login.
 
 ---
 

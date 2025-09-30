@@ -36,6 +36,18 @@ build/
 .env.local
 .env.*
 !.env.example
+mobile/.env
+mobile/.env.local
+mobile/.env.*
+mobile/!.env.example
+api/.env
+api/.env.local
+api/.env.*
+api/!.env.example
+infra/.env
+infra/.env.local
+infra/.env.*
+infra/!.env.example
 
 # --- Expo / React Native (mobile/) ---
 mobile/node_modules/
